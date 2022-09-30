@@ -1,3 +1,6 @@
+import PropTypes from 'prop-types';
+import { StatWrap, StatInfo } from './Statistics.styled';
+
 export const Statistics = ({
   good,
   neutral,
@@ -6,12 +9,20 @@ export const Statistics = ({
   positivePercentage,
 }) => {
   return (
-    <div>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad} </p>
-      <p>Total: {total}</p>
-      <p>Positiv feedback: {positivePercentage}%</p>
-    </div>
+    <StatWrap>
+      <StatInfo>Good: {good}</StatInfo>
+      <StatInfo>Neutral: {neutral}</StatInfo>
+      <StatInfo>Bad: {bad} </StatInfo>
+      <StatInfo>Total: {total}</StatInfo>
+      <StatInfo>Positiv feedback: {positivePercentage}%</StatInfo>
+    </StatWrap>
   );
+};
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
 };

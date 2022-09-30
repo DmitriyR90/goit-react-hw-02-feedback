@@ -53,17 +53,6 @@ export class App extends Component {
           ) : (
             <Notification message="There is no feedback" />
           )}
-          {/* { if (this.countTotalFeedback === 0){
-            <Notification message="There is no feedback" />
-          } else {
-            <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
-              total={this.countTotalFeedback()}
-              positivePercentage={this.countPositiveFeedbackPercentage()}
-            />
-          }} */}
         </Section>
       </div>
     );
